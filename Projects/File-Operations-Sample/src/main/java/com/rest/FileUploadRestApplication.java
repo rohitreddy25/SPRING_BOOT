@@ -1,0 +1,19 @@
+package com.rest;
+
+import org.springframework.boot.SpringApplication;
+import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.boot.autoconfigure.jdbc.DataSourceAutoConfiguration;
+import org.springframework.boot.autoconfigure.orm.jpa.HibernateJpaAutoConfiguration;
+import org.springframework.context.annotation.ComponentScan;
+
+
+@SpringBootApplication
+@EnableAutoConfiguration(exclude={HibernateJpaAutoConfiguration.class,DataSourceAutoConfiguration.class})
+@ComponentScan
+public class FileUploadRestApplication {
+    public static void main(String[] args) throws Exception {
+        SpringApplication springApplication = new SpringApplication(FileUploadRestApplication.class);
+        springApplication.run(args);
+    }
+}
